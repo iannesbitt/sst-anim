@@ -16,7 +16,7 @@ t=$(date +%Y%m%d -d "today")
 wget -nc -O "/home/$USER/science/sst/img/ct5km_ssta_v3.1_global_$t.png" \
   "https://www.ospo.noaa.gov/data/cb/ssta/ssta.daily.current.png"
 
-if $2; do
+if [ -z ${2+x} ]; then
   f=$2
 else
   f=15
