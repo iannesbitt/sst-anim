@@ -20,7 +20,7 @@ if [ -z ${2+x} ]; then
   f=$2
 else
   f=15
-done
+fi
 
 ffmpeg -framerate $f -pattern_type glob -i "/home/$USER/science/sst/img/*.png" \
   -c:v libx264 -vf "scale='bitand(oh*dar,65534)':'min(720,ih)'" \
